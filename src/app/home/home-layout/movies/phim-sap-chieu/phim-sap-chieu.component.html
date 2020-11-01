@@ -1,0 +1,24 @@
+<div class="movie-info__list">
+    <!-- <ngx-slick-carousel class="carousel"
+                        #slickModal="slick-carousel" 
+                        [config]="slideConfig">
+        <div ngxSlickItem *ngFor="let slide of DanhSachPhimSapChieu" class="slide">
+              <div class="row">
+                  <div class="movie-card col-3 my-3" *ngFor="let phim of DanhSachPhimSapChieu | slice: 0:8">
+                      <div class="img-card mb-3">
+                        <app-item-phim-sc [PhimSC]=phim></app-item-phim-sc>
+                      </div>
+                  </div>
+              </div>
+        </div>
+    </ngx-slick-carousel> -->
+
+    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+        <button class="slick-prev slick-arrow" aria-label="Previous" type="button" >Previous</button>
+        <div ngxSlickItem *ngFor="let phimItem of DanhSachPhimSapChieu" class="slide">
+            <app-item-phim-sc [PhimSC]="phimItem" ></app-item-phim-sc>
+        </div>
+        <button class="slick-next slick-arrow" aria-label="Next" type="button" >Next</button>
+    </ngx-slick-carousel>
+    
+</div>

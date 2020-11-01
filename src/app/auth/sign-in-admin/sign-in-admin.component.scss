@@ -1,0 +1,31 @@
+@import "main";
+.signin--vertical{
+    img{
+        width: 50px;
+        padding-top: $pad-mar2;
+        cursor: pointer;
+    }
+    width: 100vw;
+    height: 108vh;
+    margin-top: -60px;
+    background-image: url("https://tix.vn/app/assets/img/icons/bg2.jpg") ;
+    background-size: contain;
+    background-position: center;
+    .signin-modal{
+        width: 500px;   
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-image: linear-gradient(to bottom,rgba(20,50,93,.9),rgba(8,22,48,.9));
+        box-shadow: 0 0 10px 0 rgba(0,0,0,.45);
+        text-align: center;
+        color: #fff;
+        border-radius: $pad-mar1;
+        @include for-size(xs){
+            width: 300px;
+    }
+    }
+}
+

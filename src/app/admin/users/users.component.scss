@@ -1,0 +1,63 @@
+@import "main";
+.quanLy-nguoiDung {
+  opacity: 0;
+  transition: all 0.3s;
+}
+.show {
+  opacity: 1;
+}
+
+.mat-spinner {
+  margin: 0 auto;
+}
+.table-content {
+  overflow-x: auto;
+  table {
+    width: 98%;
+    padding:$pad-mar8;
+    margin: 0 auto;
+    th {
+      padding: 10px 20px;
+      white-space: nowrap;
+      margin: 0 auto;
+    }
+    td {
+      // max-width: 150px;
+      padding: $pad-mar2 $pad-mar5;
+      align-self: center;
+    }
+  }
+}
+
+.mat-form-field {
+  font-size: $font-size2;
+  width: 100%;
+}
+.add-user {
+  text-align: right;
+  margin-right: $pad-mar3;
+  //   margin-bottom: 15px;
+}
+.remove-input {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  opacity: 0.5;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
+}
+.action {
+  i {
+    font-size: $font-size3;
+    cursor: pointer;
+  }
+  i:first-child:hover {
+    color: rgb(189, 21, 29);
+  }
+  i:last-child:hover {
+    color: rgb(63 81 181);
+  }
+}

@@ -1,0 +1,32 @@
+<div class="row lich-chieu" [ngClass]="{'lich-chieu-dark' : isTheme,'show':thongTinRap}">
+    <div class="col-lg-5 col-md-6 lich-chieu__content">
+        <ul  class="lich-chieu__rap px-5">
+            <li *ngFor="let thongTinRap of thongTinRap,let index = index"
+                class="lich-chieu__item py-2 border-bottom" [ngClass]="{'active':index==indexActive}"
+                (click)="layMaCupRap(thongTinRap.maCumRap);changeIndex(index)"
+                 >
+                        <div class="d-flex" (click)="showCumRap()" data-toggle="collapse" [attr.data-target]="'#'+thongTinRap.maCumRap">
+                            <img src="assets/img/rap-demo.jpg" alt="">
+                            <div class="item__title ml-2">
+                                <span class="tenRap" [ngClass]="{'BHD':maRap=='BHDStar',
+                        'CGV':maRap=='CGV','CineStar':maRap=='CineStar','Galaxy':maRap=='Galaxy',
+                        'LotteCinima':maRap=='LotteCinima','MegaGS':maRap=='MegaGS'}">
+                                    {{thongTinRap.tenCumRap.split("-")[0]}}
+                                </span>
+                                <span class=""> - {{thongTinRap.tenCumRap.split("-")[1]}}</span>
+                                <p class="dsRap-diaChi small my-0">{{thongTinRap.diaChi}}</p>
+                            </div>
+                        </div>
+                    <div *ngIf="currentWindowWidth <= 420"
+                        class="lich-chieu__phim-item collapse" [id]="thongTinRap.maCumRap">
+                        <app-movie-schedule  [isTheme]=isTheme [maRap]=maRap [maCumRap]=thongTinRap.maCumRap>
+                        </app-movie-schedule>
+                    </div>
+            </li>
+        </ul>
+        <div class="line"></div>
+    </div>
+    <div *ngIf="currentWindowWidth > 420" class="col-lg-7 col-md-6   lich-chieu__phim">
+        <app-movie-schedule *ngIf="maCumRap" [isTheme]=isTheme [maRap]=maRap [maCumRap]=maCumRap></app-movie-schedule>
+    </div>
+</div>

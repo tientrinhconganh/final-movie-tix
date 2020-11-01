@@ -1,0 +1,27 @@
+<div class="rap mx-auto " [ngClass]='{"dark-rap":isTheme}'>
+  <div class="rap__title">
+      <p class="active"> CỤM RẠP </p>
+  </div>
+  <div class="rap__content">
+      <div class="rap__logo row" >
+          <div #logoRap class="col-md-2 col-sm-4 rap__item " *ngFor="let rapItem of dsRap;let index = index"
+              [attr.data-id]="index" [ngClass]="{'active':index==indexActive}"
+              (click)="layMaRap(rapItem.maHeThongRap);changeIndex(index)">
+              <div class="bg-item" >
+                  <div class="img-logo" data-toggle="collapse" [attr.data-target]="'#b'+index">
+                      <img [src]="rapItem.logo" alt="">
+                      <p>{{rapItem.tenHeThongRap}}</p>
+                      <i class="fas fa-chevron-down"></i>
+                  </div>
+                  <div [id]='"b"+index' *ngIf="currentWindowWidth <= 420"
+                      class="collapse rap__lich-chieu-item ">
+                      <app-show-theaters [maRap]=rapItem.maHeThongRap [isTheme]=isTheme></app-show-theaters>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="rap__lich-chieu"  *ngIf="currentWindowWidth > 420" [ngStyle]='' >
+          <app-show-theaters *ngIf="maRap" [maRap]=maRap [isTheme]=isTheme></app-show-theaters>
+      </div>
+  </div>
+</div>

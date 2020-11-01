@@ -1,0 +1,142 @@
+@import "main";
+
+#detailMain {
+  color: #000;
+  width: 100%;
+  @include for-size(md) {
+    max-width: 760px;
+  }
+  @include for-size(sm) {
+    max-width: 560px;
+  }
+  @include for-size(xs) {
+    max-width: 95%;
+  }
+}
+#detailMain .detailMainStyle {
+  margin-top: 50px;
+  margin-right:$pad-mar3;
+  margin-left:$pad-mar3;
+  @include for-size(sm) {
+    margin-top: $pad-mar4;
+  }
+}
+#detailMain .left {
+  margin-bottom: 0;
+}
+#detailMain .film {
+  padding: 0 7px;
+  margin-bottom:$pad-mar3;
+}
+#detailMain .rowLeftInfo {
+  margin-bottom: $pad-mar2;
+}
+#detailMain .contentTitle {
+  width: 35%;
+  float: left;
+  font-size: $font-size3;
+  font-family: "SF Medium";
+  @include for-size(phone-sm) {
+    width:50% !important;
+  }
+}
+#detailMain .contentInfo {
+  width: 40%;
+  float: left;
+  font-size: $font-size3;
+  color: rgb(0, 0, 0, 0.6);
+  @include for-size(xs) {
+    font-size: $font-size2;
+  }
+}
+
+#detailMain .right {
+  padding-left: $pad-mar2 !important;
+  margin-bottom: 0;
+}
+#detailMain .rowLeftInfo {
+  margin-bottom: $pad-mar2;
+}
+#detailMain .contentTitle {
+  width: 35%;
+  float: left;
+  font-size: $font-size3;
+  font-family: "SF Medium";
+}
+
+#detailMain .contentInfoFull {
+  color: rgb(0, 0, 0, 0.6);
+  text-align: justify;
+  white-space: pre-wrap;
+  font-family: "SF Regular";
+  width: 100%;
+  float: left;
+  font-size: $font-size4;
+  @include for-size(xs) {
+    font-size: $font-size3;
+  }
+  @include for-size(iphone) {
+    font-size: $font-size2;
+  }
+}
+#detailMain.dark-info {
+  .film {
+    &.right {
+      .contentInfoFull {
+        color: hsla(0, 0%, 100%, 0.6);
+      }
+    }
+  }
+  .chiTiet-trailer{
+    p{
+      color:hsla(0, 0%, 100%, 0.6) ;
+    }
+  }
+  .contentTitle,
+  .description {
+    color:#fff;
+  }
+  .contentInfo {
+    color: hsla(0, 0%, 100%, 0.6);
+  }
+  .chiTiet-trailer {
+    color: hsla(0, 0%, 100%, 0.6);
+  }
+}
+#detailMain {
+  .film {
+    &.right {
+      .contentTitle {
+        font-size: $font-size4;
+      }
+    }
+  }
+  .chiTiet-trailer {
+    p{
+      text-align: center;
+      width: 100px;
+      border-bottom: 4px double #68b306;
+      color: rgb(0, 0, 0, 0.6);
+    }
+    .trailer {
+      iframe {
+        height: 600px;
+        @include for-size(md) {
+          height: 450px;
+          @include for-size(sm) {
+            height: 350px;
+          }
+          @include for-size(xs) {
+            height: 280px;
+          }
+          @include for-size(phone-sm) {
+            height: 230px;
+          }
+          @include for-size(iphone) {
+            height: 200px;
+          }
+        }
+      }
+    }
+  }
+}

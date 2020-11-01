@@ -1,0 +1,27 @@
+<div class="movies">
+    <div class="row movies-tabs mx-auto py-2">
+        <div class="col-6 text-right">
+            <p class="movies-link" [ngClass]="{'active': dangChieuStatus}" (click)="HienPhimDangChieu()">
+                Đang Chiếu
+            </p>
+        </div>
+        <div class="col-6">
+            <p class="movies-link mr-2" [ngClass]="{'active': !dangChieuStatus}" (click)="HienPhimSapChieu()">
+                Sắp Chiếu
+            </p>
+        </div>
+
+
+    </div>
+
+    <div class="row my-5">
+        <div class="col-12" *ngIf="dangChieuStatus;else phimSapChieu">
+            <app-phim-dang-chieu></app-phim-dang-chieu>
+        </div>
+        <ng-template #phimSapChieu>
+            <div class="col-12">
+                <app-phim-sap-chieu></app-phim-sap-chieu>
+            </div>
+        </ng-template>
+    </div>
+</div>

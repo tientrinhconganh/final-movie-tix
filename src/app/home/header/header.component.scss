@@ -1,0 +1,134 @@
+@import 'main';
+.navbar {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 70px;
+  background-color: rgba(253, 253, 253, 0.85);
+  img {
+    width: 60px;
+  }
+  .navbar-brand {
+    position: absolute;
+    top: 0;
+    left: 5%;
+  }
+  .navbar-collapse {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .user {
+    position: absolute;
+    right: 5%;
+    img {
+      width: 50px;
+    }
+  }
+}
+
+.UserName {
+  align-self: center;
+  font-weight: 550;
+  color: brown;
+}
+.user{
+  position: relative;
+  .btn-dangNhap {
+   
+    background-image: linear-gradient(
+      to right top,
+      #216bd3e6,
+      #1b5ebbe6,
+      #1651a3e6,
+      #13468fe6,
+      #123e7ce6,
+      #133b74e6
+    );
+    box-sizing: border-box;
+    color: #fff;
+    // text-align: center;
+    // line-height: 30px;
+    // width: 135px;
+    font-weight: 550;
+    // height: 30px;
+    display: inline-block;
+    border-radius: 3px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    // font-size: 14px;
+    cursor: pointer;
+    @include for-size(sm) {
+      padding-left: 5%;
+    }
+  }
+  .helloUser {
+    padding: 0 $pad-mar3;
+    cursor: pointer;
+    .UserName-img {
+      position: relative;
+
+      .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+      .UserInfo {
+        cursor: pointer;
+        position: absolute;
+        top: 75%;
+        right: -262%;
+        transition: all 0.5s;
+        overflow: hidden;
+        color: #000;
+        text-align: center;
+        width: 250px;
+        height: 0;
+        transition:all .5;
+        .arrow-up {
+          height: 5px;
+          img {
+            width: 5px;
+            height: 5px;
+          }
+        }
+        .UserInfo__content {
+          background-image: linear-gradient(
+            to bottom,
+            rgb(255, 255, 255),
+            rgb(212, 212, 212)
+          );
+          border: 1.5px solid rgba(163, 163, 163, 0.781);
+          width: 95%;
+          box-shadow: 1px 1px 7px 2px #0000002e;
+          .inFo {
+            padding: $pad-mar2 0 5px 0;
+            border-bottom: 1.5px solid rgba(163, 163, 163, 0.781);
+          }
+          .logOut {
+            padding: 5px 0 10px 0;
+          }
+          .inFo,
+          .logOut {
+            padding: 10px 0;
+            p{
+              font-size: $font-size1;
+              margin: 0;
+            }
+            &:hover {
+              background-color: rgb(82, 147, 238);
+              p{
+                color: white;
+              }
+              border-left: $pad-mar1 solid rgb(8, 50, 109);
+              font-weight: 100;
+            }
+          }
+        }
+      }
+      .activeUserInfo {
+        height: 150px;
+      }
+    }
+    
+  }
+}

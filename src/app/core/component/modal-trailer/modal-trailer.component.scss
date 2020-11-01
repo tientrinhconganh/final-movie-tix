@@ -1,0 +1,53 @@
+@import "main";
+
+.modal-trailer{
+    .modal-content{
+        background: transparent;
+        border: none;
+        position: relative;
+        .close{
+            position: absolute;
+            top: -4%;
+            right: -9%;
+            cursor: pointer;
+            border-radius: 50%;
+            &:hover{
+                box-shadow: 0 0 $pad-mar7 $pad-mar1 gray;
+            }
+        }
+    }
+} 
+iframe{
+    width: 1000px;
+height: 585px;
+}
+// @include for-size(ll){
+//     iframe{
+//         width: 1900px;
+// height: 1500px;
+//     }
+// }
+@include for-size(lg){
+    iframe{
+        width: 853px;
+height: 480px;
+    }
+}
+@include for-size(md){
+    iframe{
+        width: 500px;
+height: 320px;
+    }
+}
+@include for-size(xs){
+    iframe{
+        width: 360px;
+height: 250px;
+    }
+}
+@include for-size(iphone-5){
+    iframe{
+        width: 300px;
+height: 190px;
+    }
+}

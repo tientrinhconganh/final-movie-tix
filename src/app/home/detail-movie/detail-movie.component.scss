@@ -1,0 +1,182 @@
+@import "main";
+.styleGradient {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  background: linear-gradient(#fdfbfb00, #f2f3f3);
+  z-index: 1;
+}
+
+
+
+.detail_movie {
+  background-image: url("../../../assets/img/bg-city.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  // padding-top: $pad-marHeading;
+  // padding-bottom: $pad-mar8;
+  padding: 200px 0;
+
+  .detail_left {
+    position: relative;
+    .play-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      outline: none;
+      opacity: 1;
+      transition: opacity 0.3s;
+      display: none;
+      img{         
+            height: 20%;
+      }       
+    }
+    &:hover .play-icon{
+        opacity: 0.8;
+        display: block;
+    }
+  }
+
+  .detail_center {
+    color: white;
+    font-size: $font-size3;
+    .rong {
+      padding: 10%;
+    }
+    a {
+      background-color: orangered;
+      color: white;
+      & :hover {
+        background-color: white;
+        color: orangered;
+      }
+    }
+  }
+
+  .circlePercent {
+    position: relative;
+    font-size: 50px;
+    color: white;
+    .circle-danhGia {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+ 
+  @include for-size(lg) {
+    .img-phim {
+      img {
+        width: 214px;
+        height: 316px;
+      }
+    }
+  }
+  @include for-size(md) {
+    .img-phim {
+      img {
+        height: 250px;
+      }
+    }
+  }
+  @include for-size(sm) {
+    .img-phim {
+      display: flex;
+      justify-content: center;
+      img {
+        height: 260px;
+      }
+    }
+    .header-circleStar{
+      display: none;
+    }
+    .detail_center{
+      text-align: center;
+    }
+  }
+  .img-phim {
+    position: relative;
+    .playTrailer {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      background: 0 0;
+      border: none;
+      outline: none;
+      opacity: 1;
+      transition: opacity 0.3s;
+      img {
+        width: 50px;
+        height: 50px;
+      }
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.footer_detail {
+  background-color: rgb(10, 32, 41);
+  .detail-footer {
+    padding: $pad-mar8 0;
+    max-width: $width-ll;
+    @include for-size(lg) {
+      max-width: $width-lg;
+    }
+    @include for-size(md) {
+      max-width: 100%;
+    }
+    @include for-size(sm) {
+      padding: $pad-mar2;
+    }
+    .detai-footer-title {
+      padding: 0 $pad-mar8;
+      h3 {
+        color: #fff;
+        padding: 0 $pad-mar5;
+        transition: all 0.5s;
+        font-size: $font-size4;
+        font-weight: 400;
+        cursor: pointer;
+        &:hover {
+          color: $color-headingA;
+          font-size: $font-size5;
+          @include for-size(xs) {
+            font-size: $font-size3;
+          }
+        }
+        @include for-size(xs) {
+          font-size: 15px;
+          padding: 0 $pad-mar4;
+        }
+      }
+      h3.active {
+        font-weight: 550;
+        color: $color-headingA;
+        font-size: $font-size5;
+        pointer-events: none;
+        @include for-size(xs) {
+          font-size: $font-size3;
+        }
+        @include for-size(iphone) {
+          font-size: $font-size3;
+        }
+      }
+      @include for-size(sm) {
+        padding: $pad-mar4 $pad-mar4;
+      }
+      @include for-size(xs) {
+        padding: $pad-mar4 $pad-mar4;
+      }
+      @include for-size(phone-sm) {
+        padding: $pad-mar4 0;
+      }
+    }
+  }
+}

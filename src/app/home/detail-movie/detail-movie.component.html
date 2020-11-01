@@ -1,0 +1,81 @@
+<!-- <app-spinner-background ></app-spinner-background> -->
+<div>
+
+    <div class="detail_movie">
+        <div class="styleGradient"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 detail_left col-12">
+                    <div class="img-phim">
+                        <img [src]="chiTietPhim.hinhAnh" alt="" class="img-fluid">
+                        <button class="playTrailer" data-toggle="modal" data-target="#modal-trailer"
+                            (click)="clickPlayButton()">
+                            <img src="/assets/img/play-video.png">
+                        </button>
+                    </div>
+
+                </div>
+                <div class="col-sm-6 text-white detail_center col-12">
+                    <div class="rong"></div>
+                    <p>Tên phim: {{chiTietPhim.tenPhim}}</p>
+                    <p>Ngày khởi chiếu: {{chiTietPhim.ngayKhoiChieu | date:'1'}}-2020</p>
+                    <p>120 Phut - IDMb 8.5 - 2D/Digital</p>
+                    <a (click)="changeDieuKien('lichChieu')" class="btn  my-2 btn-danger" pageScroll href="#lichChieu"
+                        [pageScrollDuration]="300"><span>Mua Vé</span></a>
+                </div>
+                <div class="col-sm-3 mt-5">
+                    <div class="header-circleStar ml-auto">
+                        <div class="circlePercent text-center">
+                            <circle-progress [percent]="chiTietPhim.danhGia*10" [radius]="70" [outerStrokeWidth]="12"
+                                [innerStrokeWidth]="8" [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'"
+                                [animation]="true" [animationDuration]="300" [titleFontSize]="60"
+                                [backgroundPadding]="-20" [toFixed]="1" [animationDuration]="1000">
+                            </circle-progress>
+
+                            <span class="circle-danhGia">{{chiTietPhim.danhGia}}</span>
+                        </div>
+                        <div class="circleStar-star">
+                            <app-danh-gia [danhGia]=chiTietPhim.danhGia [phimItem]="3"></app-danh-gia>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer_detail">
+        <div id="lichChieu" class="detail-footer  mx-auto">
+            <div class="detai-footer-title text-center">
+                <h3 class="d-inline" (click)='changeDieuKien("lichChieu")' [ngClass]='{"active":dieuKien=="lichChieu"}'>
+                    Lịch
+                    Chiếu</h3>
+                <h3 class="d-inline" (click)='changeDieuKien("thongTin")' [ngClass]='{"active":dieuKien=="thongTin"}'>
+                    Thông
+                    Tin</h3>
+                <h3 class="d-inline" (click)='changeDieuKien("danhGia")' [ngClass]='{"active":dieuKien=="danhGia"}'>Đánh
+                    Giá
+                </h3>
+            </div>
+            <div class="detail-footer__content ">
+                <div [@enterAnimation] *ngIf="dieuKien === 'lichChieu'">
+                    <app-movie-showtimes-information [isTheme]=isTheme [chiTietRap]=chiTietPhim.heThongRapChieu
+                        [cumRamChieu]=cumRapActive [chiTietPhim]=chiTietPhim>
+                    </app-movie-showtimes-information>
+                </div>
+                <div *ngIf="dieuKien === 'thongTin'">
+                    <app-info-movie [isTheme]=isTheme [phim]=chiTietPhim>
+                    </app-info-movie>
+                </div>
+                <div [@enterAnimation] *ngIf="dieuKien === 'danhGia'">
+                    <app-film-review [isTheme]=isTheme>
+                    </app-film-review>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<div>
+    <app-modal-trailer></app-modal-trailer>
+</div>

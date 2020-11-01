@@ -1,0 +1,10 @@
+<div class="movie__item item px-2">
+    <div class="hinhAnhPhim">
+        <img [src] = "PhimSC.hinhAnh" alt="">
+        <button class="playTrailer" data-toggle="modal" data-target="#modal-trailer" (click)="clickPlayButton()">
+          <img src="/assets/img/play-video.png">
+      </button>
+      </div>
+    <p><span class="ageType">C18</span>{{ PhimSC.tenPhim }}</p>
+    <p class="time">{{ PhimSC.thoigian }}</p>
+</div>

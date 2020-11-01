@@ -1,0 +1,27 @@
+<div class="container my-5" id="tintuc">
+    <div class="tabs-area d-flex justify-content-between tintucTitle">
+        <div class="tab-area px-1" [ngClass]="{'active': isActivated === 'dienAnh'}" (click)="changeTab('dienAnh')">
+            Điện Ảnh
+        </div>
+        <div class="tab-area px-1" [ngClass]="{'active': isActivated === 'review'}" (click)="changeTab('review')">
+            Review
+        </div>
+        <div class="tab-area px-1" [ngClass]="{'active': isActivated === 'khuyenMai'}" (click)="changeTab('khuyenMai')">
+            Khuyến mãi
+        </div>
+    </div>
+    <div class="row" [ngSwitch]="isChanged">
+        <div class="col-sm-12" *ngSwitchCase="'dienAnh'">
+            <app-dien-anh></app-dien-anh>
+        </div>
+        <div class="col-sm-12" *ngSwitchCase="'review'">
+            <app-review></app-review>
+        </div>
+        <div class="col-sm-12" *ngSwitchCase="'khuyenMai'">
+            <app-khuyen-mai></app-khuyen-mai>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center btnXemthem py-5">
+        <button class="btn btn-light">Xem thêm</button>
+      </div>
+</div>

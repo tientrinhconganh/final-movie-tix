@@ -1,0 +1,24 @@
+
+@import "main";
+.movies {
+    border-radius: $pad-mar4;
+    
+    margin: $pad-mar6 0;
+    
+    .movies-tabs {
+      width: 100%;
+      .movies-link {
+        cursor: pointer;
+        color: black;
+        font-size: $font-size5;     
+      }
+      .active {
+        color: #fa5238;
+        font-size: $font-size5;
+        font-weight: 600;
+        &:before {
+          width: 100%;
+        }
+      }
+    }
+  }

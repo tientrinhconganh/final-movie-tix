@@ -1,0 +1,115 @@
+<div class="modal-dialog modal-dialog--config" role="document" >
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title text-center mx-auto
+                ">Thêm user</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div #btnClose class="btn-close" data-dismiss="modal">
+                    <i class="fas fa-times"></i>
+                </div>
+
+                <form [formGroup]='formUser' (ngSubmit)="addUser(formUser.value)" class="row">
+                    <!-- //tài khoản -->
+                    <div class="form-group col-12">
+                        <label for="">Tai Khoản</label>
+                        <input type="text" class="form-control" formControlName="taiKhoan" placeholder="Tài khoản" />
+
+                        <div class=' error' *ngIf="formUser.get('taiKhoan').invalid &&
+                    (formUser.get('taiKhoan').dirty || formUser.get('taiKhoan').touched)">
+                            <div *ngIf="formUser.get('taiKhoan').errors['required']">
+                                * Bạn chưa nhập tài khoản.
+                            </div>
+                            <div *ngIf="formUser.get('taiKhoan').errors['pattern']">
+                                * Tài khoản không được chứa khoảng trống.
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- //mật khẩu -->
+                    <div class="form-group col-12">
+                        <label for="">Mật khẩu</label>
+                        <input type="password" class="form-control" placeholder="Mật Khẩu" formControlName='matKhau' />
+
+                        <div class=' error' *ngIf="formUser.get('matKhau').invalid &&
+                    (formUser.get('matKhau').dirty || formUser.get('matKhau').touched)">
+                            <div *ngIf="formUser.get('matKhau').errors['required']">
+                                * Bạn chưa nhập mật khẩu.
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- //họ tên -->
+                    <div class="form-group col-12">
+                        <label for="">Họ tên</label>
+                        <input type="text" class="form-control" placeholder="Họ Tên" formControlName='hoTen' />
+
+                        <div class=' error' *ngIf="formUser.get('hoTen').invalid &&
+                        (formUser.get('hoTen').dirty || formUser.get('hoTen').touched)">
+                            <div *ngIf="formUser.get('hoTen').errors['required']">
+                                * Bạn chưa nhập họ tên.
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- //email -->
+                    <div class="form-group col-12">
+                        <label for="">Email</label>
+                        <input type="text" class="form-control" placeholder="Email" formControlName='email' />
+
+                        <div class=' error' *ngIf="formUser.get('email').invalid &&
+                    (formUser.get('email').dirty || formUser.get('email').touched)">
+                            <div *ngIf="formUser.get('email').errors['required']">
+                                * Bạn chưa nhập email.
+                            </div>
+                            <div *ngIf="formUser.get('email').errors['pattern']">
+                                * Emal không đúng định dạng.
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- //sdt -->
+                    <div class="form-group col-12">
+                        <label for="">Số điện thoại</label>
+                        <input type="text" class="form-control" placeholder="Số Điện Thoại" formControlName='soDt' />
+
+                        <div class=' error' *ngIf="formUser.get('soDt').invalid &&
+                        (formUser.get('soDt').dirty || formUser.get('soDt').touched)">
+                            <div *ngIf="formUser.get('soDt').errors['required']">
+                                * Bạn chưa nhập số điện thoại.
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- // người dùng -->
+                    <div class="form-group col-12">
+                        <label for="">Loại người dùng</label>
+                        <select class="" name="loaiNguoiDung" id="loaiNguoiDung" formControlName='maLoaiNguoiDung'>
+
+                            <option value="KhachHang">Khách Hàng</option>
+                            <option value="QuanTri">Quản Trị</option>
+                        </select>
+
+                        <div class=' error' *ngIf="formUser.get('maLoaiNguoiDung').invalid &&
+                    (formUser.get('maLoaiNguoiDung').dirty || formUser.get('maLoaiNguoiDung').touched)">
+                            <div *ngIf="formUser.get('maLoaiNguoiDung').errors['required']">
+                                * Bạn chưa chọn loại người dùng.
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="btn-xacNhan">
+                        <button class="btn btn-success" type="submit">{{button}}</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

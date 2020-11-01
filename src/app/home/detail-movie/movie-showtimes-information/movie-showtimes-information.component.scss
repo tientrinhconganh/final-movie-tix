@@ -1,0 +1,135 @@
+@import "../../home-layout/cum-rap/cum-rap.component.scss";
+@import "../../home-layout/cum-rap/show-time/show-time.component.scss";
+@import "../../home-layout/cum-rap/show-theaters/show-theaters.component.scss";
+@import "../../home-layout/cum-rap/movie-schedule/movie-schedule.component.scss";
+@import 'main';
+#chiTietRap.rap {
+  padding-top:  25px;
+  width: 100%;
+  margin: 0 auto;
+  @include for-size(sm) {
+    width: 95%;
+  }
+  @include for-size(phone-sm) {
+    width: 100%;
+    padding-top:  0;
+  }
+  .rap__content {
+    .rap__logo {
+      display: flex;
+      flex-wrap: wrap;
+      @include for-size(md) {
+        width: 100%;
+      }
+      @include for-size(phone-sm) {
+        // padding: 10px 0;
+      }
+      .rap__item {
+        // padding-right:  50px;
+        // padding-left:  50px;
+        opacity: .5;
+        &.active{
+          opacity: 1;
+        }
+        img {
+          @include wh-circle(100px);
+          @include for-size(md) {
+            @include wh-circle(80px);
+          }
+          @include for-size(xs) {
+            @include wh-circle(70px);
+          }
+          @include for-size(phone-sm) {
+            margin: 0;
+          }
+        }
+        @include for-size(lg) {
+          padding: $pad-mar2 $pad-mar6;
+        }
+        @include for-size(xs) {
+          width: fit-content;
+          padding: $pad-mar2 $pad-mar4;
+        }
+        @include for-size(phone-sm) {
+          background-color: transparent;
+          border-bottom: none;
+          // padding: 10px 0;
+        }
+      }
+    }
+    .rap__lich-chieu {
+      .lich-chieu {
+        @include for-size(xs) {
+          padding-top: 0;
+        }
+        .lich-chieu__content {
+          border: none;
+          .lich-chieu__rap {
+            padding-right: $pad-mar3;
+            height: 100%;
+            .lich-chieu__item{
+              img{
+                @include for-size(phone-sm) {
+                  width: 50px;
+                  height: 60px;
+                }
+              }
+              
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.lich-chieu__phim {
+  padding-left: $pad-mar8;
+}
+.lich-phim__ngayXem {
+  height: 85px;
+  overflow: auto;
+  @include for-size(lg) {
+    height: 74px;
+  }
+  @include for-size(sm) {
+  }
+  .ngay-xem-item {
+    padding: 0 $pad-mar8;
+    font-size: $font-size4;
+    text-align: center;
+    cursor: pointer;
+    @include for-size(phone-sm){
+      padding: 0 $pad-mar6;
+    }
+  }
+  .active {
+    color: $color-headingA;
+  }
+}
+.rap-dark {
+  .lich-phim__ngayXem {
+    color:$color-fontD-o8;
+  }
+  .suatChieu__content {
+    span {
+      color:$color-timeD !important;
+    }
+  }
+  .tenPhim {
+    color:  white !important;
+  }
+  .thoiLuong {
+    color: $color-fontD-o6 !important;
+  }
+  .tenCumRap {
+    color: white !important;
+  }
+}
+.lich-phim__suatChieu {
+  .suatChieu__content {
+    span {
+      color: #108f3e;
+      font-size: $font-size3 !important;
+    }
+  }
+}

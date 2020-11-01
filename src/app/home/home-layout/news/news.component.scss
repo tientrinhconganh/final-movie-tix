@@ -1,0 +1,45 @@
+@import "main";
+#tintuc {
+    .tabs-area {
+       margin: 0 auto;
+        padding-bottom: $pad-mar4;
+        width: 35%;
+        font-size: $font-size5;
+        cursor: pointer;
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        
+        .active{
+            color: #fa5238;
+            font-size: $font-size5;
+            font-weight: 600;
+            &:before {
+            width: 100%;
+            }
+        }
+    }
+    .btnXemthem{
+        button{
+          background-color: white;
+          color: #949494;
+          border: solid 1px black;
+          padding: $pad-mar2 $pad-mar6;
+    
+          &:hover {
+            background-color: $color-headingA;
+            color: white;
+            border: solid 1px $color-headingA ;
+            transition: 0.6s;
+          }
+        }
+    }
+    @include for-size(sm){
+      .tabs-area{
+        margin: 0;
+        padding: 0;
+      }
+
+    }
+
+}

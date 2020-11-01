@@ -1,0 +1,26 @@
+<div class="row admin">
+  <div class="col-sm-2 adminLeft">
+    <img src="https://tix.vn/app/assets/img/icons/web-logo.png" alt="">
+    <hr>
+    <div class="adminTK">
+      <img src="../../assets/img/avatar.png" alt="">
+      <p>{{ currentAdmin.taiKhoan}}</p>
+    </div>
+    <div>
+      <h4 routerLink="/admin/users">Users</h4>
+    </div>
+    <div>
+      <h4 routerLink="/admin/movies">Movies</h4>
+    </div>
+    <hr class="line">
+    <div>
+      <h4 routerLink="/">Quay về trang phim</h4>
+    </div>
+    <div>
+      <h4 (click)="logOutUser()">Đăng xuất</h4>
+    </div>
+  </div>
+  <div class="col-sm-10 py-2">
+    <router-outlet></router-outlet>
+  </div>
+</div>

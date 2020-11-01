@@ -1,0 +1,6 @@
+<p data-toggle="modal" data-target="#warning"
+(click)="datVe(gioXem.maLichChieu)" [ngClass]='{"suatChieu-dark":isTheme}' class="suatChieu__content"
+    *ngFor="let gioXem of mangGioXem.slice(0,10)">
+    <span> {{gioXem.ngayChieuGioChieu | time:'1'}} </span>
+    <span> ~ {{gioXem.ngayChieuGioChieu | date:'1'}}</span>
+</p>

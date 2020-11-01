@@ -1,0 +1,92 @@
+@import 'main';
+.ung-dung {
+  margin-top:$pad-mar8;
+  background-image: url("../../../../assets/img/background.jpg");
+  background-attachment: fixed;
+  padding: 100px;
+  @include for-size(md) {
+    padding: $pad-mar8;
+  }
+  @include for-size(sm) {
+    padding: $pad-mar8 0;
+  }
+  .ung-dung__text {
+    padding-right: $pad-mar6;
+    color: $color-fontD-o8;
+    align-self: center;
+    @include for-size(md) {
+      text-align: center;
+    }
+    .text-u-left{
+      color: $color-fontD;
+    font-weight: 700;
+    font-size: 35px;
+    padding: $pad-mar1 0;
+    @include for-size(sm) {
+      font-size: $font-size6;
+    }
+    @include for-size(phone-sm) {
+      font-size: $font-size5;
+    }
+    }
+    p {
+      font-size: $font-size3;
+      padding: 0;
+      @include for-size(sm) {
+        font-size: $font-size2;
+      }
+    }
+    button {
+      background-color:$color-but-lo;
+      margin: $pad-mar3 0;
+      color: $color-fontD;
+      font-size: $font-size3;
+      @include for-size(md) {
+        margin-bottom: $pad-mar7 ;
+      }
+    }
+  }
+}
+img {
+  @include wh-circle(100%);
+}
+.ung-dung__dt {
+  @include wh-circle(100%);
+  .ung-dung__img {
+    width: 45%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    @include for-size(sm) {
+      width: 60%;
+    }
+    img.img-dt {
+      z-index: 500;
+      overflow: hidden;
+    }
+    .ung-dung__carousel {
+      position: absolute;
+      width: 88%;
+      left: 6%;
+      top: 2%;
+      img {
+        border-radius: 7px;
+      }
+    }
+    // .ung-dung__carousel {
+    //   position: absolute;
+    //   top: 0%;
+    //   left: 5%;
+    //   width: 90%;
+    //   height: 100%;
+    //   .carousel{
+    //       width: 100%;
+    //       height: 90%;
+    //   }
+    //   img {
+    //     border-radius: 80px;
+    //     height: 95%;
+    //   }
+    // }
+  }
+}

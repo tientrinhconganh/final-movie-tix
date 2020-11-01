@@ -1,0 +1,293 @@
+@import "main";
+.chiTiet_danhGia {
+  padding:$pad-mar8;
+  @include for-size(sm) {
+    padding: 0;
+  }
+}
+.danhGia_header {
+  border: rgba(0, 0, 0, 0.2) solid 1px;
+  background-color: rgba(255, 255, 255);
+  max-width: 75%;
+  @include for-size(lg) {
+    max-width: 90%;
+  }
+  border-radius: $pad-mar1;
+  margin: 0 auto;
+  position: relative;
+  cursor: pointer;
+  .danhGia-header__content {
+    align-self: center;
+    padding: 8px $pad-mar3;
+    @include for-size(phone-sm) {
+      padding: $pad-mar1;
+    }
+    img {
+      @include wh-circle(40px);
+      margin-right: $pad-mar3;
+      @include for-size(phone-sm) {
+        margin-right: $pad-mar1;
+      }
+    }
+    p {
+      align-self: center;
+      color: rgba(0, 0, 0, 0.637);
+      @include for-size(xs) {
+        font-size: $font-size2;
+      }
+      @include for-size(iphone) {
+        font-size: $font-size2;
+      }
+    }
+    .star {
+      text-align: right;
+      align-self: center;
+      font-size: $font-size5;
+      color: var(--yellow);
+      text-align: left;
+      @include for-size(xs) {
+        line-height: 0;
+      }
+      .star-item {
+        padding: 0 1px;
+        @include for-size(xs) {
+          font-size: $font-size2;
+        }
+        @include for-size(phone-sm) {
+          font-size: $font-size2;
+        }
+        @include for-size(iphone) {
+          font-size: $font-size2;
+        }
+      }
+    }
+  }
+}
+.danhGia_body {
+  max-width: 75%;
+  padding: $pad-mar5 $pad-mar3;
+  margin: 0 auto;
+  position: relative;
+  translate: all 0.5s;
+  @include for-size(lg) {
+    max-width: 85%;
+  }
+  @include for-size(xs) {
+    padding: $pad-mar3;
+    max-width: 90%;
+  }
+  @include for-size(phone-sm) {
+    max-width: 95%;
+  }
+
+  .body__content {
+    position: relative;
+    width: 45%;
+    @include for-size(md) {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+    .tha-tim {
+      position: absolute;
+      bottom: -75px;
+      right: $pad-mar1;
+      span{
+        font-size: $font-size4;
+        position: absolute;
+        top: 50%;
+        left: 75%;
+        transform: translateY(-50%);
+      }
+    }
+    .body__title {
+      padding: $pad-mar3 $pad-mar2;
+      @include for-size(xs) {
+        padding: $pad-mar3 $pad-mar2 $pad-mar1 $pad-mar2;
+      }
+
+      p {
+        align-self: center;
+        color: #000;
+        @include for-size(xs) {
+          font-size: $font-size2;
+        }
+      }
+      .body__star {
+        text-align: center;
+      }
+    }
+  }
+  .danhGia-body__content {
+    background-color: #fff;
+    border: rgba(0, 0, 0, 0.2) solid 1px;
+    border-radius: $pad-mar1;
+    padding: 8px $pad-mar3;
+
+    @include for-size(xs) {
+      padding: $pad-mar1 $pad-mar2;
+    }
+
+    img {
+      align-self: center;
+      @include wh-circle(45px);
+      margin-right: $pad-mar3;
+      border-radius: 50%;
+      border: 3px solid #629ab2;
+      @include for-size(xs) {
+        @include wh-circle(35px);
+      }
+    }
+    p {
+      align-self: center;
+      color: black;
+      font-weight: 450;
+      pointer-events: none;
+      // width: 70%;
+    }
+    .star {
+      align-self: center;
+      font-size: $font-size5;
+      color: var(--yellow);
+      text-align: left;
+      .star-item {
+        padding: 0 1px;
+      }
+    }
+  }
+  .show-more {
+    text-align: center;
+    margin-top: $pad-mar5;
+    i {
+      cursor: pointer;
+      transition: all 0.3s;
+      color: $color-fontL-o8;
+      font-size: $font-size5;
+      &:hover {
+        color: $color-headingA;
+      }
+    }
+  }
+}
+//Modal
+.modal-danhGia {
+  top: 20%;
+  .modal-dialog {
+    max-width: $width-lg;
+    .modal-content {
+      width: 100%;
+      padding: $pad-mar4;
+      @include for-size(md) {
+        max-width: 85%;
+        margin: 0 auto;
+      }
+      @include for-size(xs) {
+        max-width: 100%;
+        padding: $pad-mar4 $pad-mar4 $pad-mar8 $pad-mar4;
+        max-height: 330px;
+        overflow: hidden;
+      }
+      .button-close {
+        position: absolute;
+        top: 2%;
+        right: 2%;
+      }
+      .content-star {
+        font-size: $font-size6;
+        padding-bottom: $pad-mar6;
+        .modal-rating {
+          font-size: 35px;
+        }
+        .modal-star {
+          .rating-star {
+            cursor: pointer;
+            display: inline-flex;
+            flex-direction: row-reverse;
+          }
+          .rating-star input {
+            display: none;
+          }
+          .rating-star label,
+          .rating-star label.half {
+            padding: 0 $pad-mar1;
+          }
+          .rating-star label.half {
+            width: 25px;
+            overflow: hidden;
+            position: relative;
+            margin-right: -25px;
+          }
+          .rating-star input:checked ~ label {
+            text-shadow: 0px 0 10px rgba(255, 157, 180, 0.28);
+            color: var(--yellow);
+          }
+          .rating-star:not(:checked) > label:hover,
+          .rating-star:not(:checked) > label:hover ~ label {
+            color: var(--yellow);
+          }
+        }
+      }
+      .content-message {
+        padding: 10px;
+        border: solid 1px rgba(134, 128, 128, 0.623);
+        border-radius: $pad-mar1;
+      }
+      .mess-footer {
+        position: relative;
+        .btn-mess {
+          .content-button {
+            margin-top: 10px;
+            padding: 2px $pad-mar3;
+            background-color: #fb4226;
+            border-radius: $pad-mar1;
+            color: white;
+            font-weight: 550;
+            font-size:$font-size3;
+            @include for-size(xs) {
+              position: absolute;
+              top: 0;
+              right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+textarea.input100 {
+  width: 100%;
+  padding-top: $pad-mar2;
+  padding-bottom: $pad-mar3;
+}
+
+textarea {
+  outline: none;
+  border: none;
+}
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+.dark-danhGia {
+  .danhGia_body {
+    .tha-tim {
+      span{
+        color: white;
+        
+      }
+    }
+    .body__title {
+      p {
+        color:white;
+        font-weight: 550;
+      }
+    }
+    .show-more {
+      i {
+        color:  $color-fontD-o8;
+        &:hover {
+          color:$color-headingA;
+        }
+      }
+    }
+  }
+}

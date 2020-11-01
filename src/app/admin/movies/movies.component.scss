@@ -1,0 +1,103 @@
+@import "main";
+@import "../../admin/users/users.component.scss";
+.quanLy-Phim {
+  opacity: 0;
+  transition: all 0.3s;
+  //   overflow-x: auto;
+  // //   max-width: 100%;
+}
+.show {
+  opacity: 1;
+}
+.mat-form-field {
+  font-size: $font-size2;
+  width: 100%;
+}
+.add-film {
+  text-align: right;
+  margin-right:$pad-mar3;
+  //   margin-bottom: $pad-mar3;
+}
+.table-content {
+  max-width: 100%;
+  overflow-x: scroll;
+}
+// th, td { min-width: 200px; }
+.remove-input {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  opacity: 0.5;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
+}
+table {
+  // max-width: 98%;
+  @include for-size(lg){
+    // max-width: 960px;
+  }
+  margin: 0 auto;
+  padding: 50px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-shadow: 0px $pad-mar1 $pad-mar1 -3px rgba(0, 0, 0, 0.2),
+    0px 8px $pad-mar2 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+  th {
+    padding: $pad-mar2 $pad-mar4;
+    white-space: nowrap;
+    margin: 0 auto;
+  }
+  td {
+    max-width: 150px;
+
+    span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  img {
+    width: 80px;
+    height: 120px;
+  }
+}
+.labelUpFile {
+  position: relative;
+  cursor: pointer;
+  .upload-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
+    opacity: 0;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+::ng-deep .mat-cell {
+  text-align: center;
+  justify-content: center;
+}
+::ng-deep mat-header-cell {
+  display: flex;
+  justify-content: flex-end;
+}
+::ng-deep .mat-sort-header-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+::ng-deep .ngx-pagination {
+  text-align: right;
+  margin-right: 50px;
+}

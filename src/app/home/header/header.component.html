@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-sm navbar-light">
+    <a class="navbar-brand" href="#" routerLink="/">
+        <img src="https://tix.vn/app/assets/img/icons/web-logo.png" alt="">
+    </a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="#lichchieu" [routerLink]="['']">Lịch chiếu <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#cumrap" [routerLink]="['']">Cụm rạp</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#tintuc" [routerLink]="['']">Tin tức</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#ungdung" [routerLink]="['']">Ứng dụng</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " [routerLink]="['/admin']" >Admin</a>
+            </li>
+        </ul>
+
+    </div>
+    <div class="user">
+
+          <div *ngIf="!currentUser.taiKhoan;else hello" (click)="showLogin()" class="btn-dangNhap btn" routerLink="signin">Đăng Nhập</div>
+          <ng-template #hello>
+              <div  class="helloUser d-flex" (click)='isInfo=!isInfo' (mouseenter) ="isInfo = true"  (mouseleave) ="isInfo = false">
+                  <div class="UserName-img " >
+                      <img src="../../../assets/img/avatar.png" alt="" class="avatar">
+                      <div class="UserInfo" [ngClass]='{"activeUserInfo":isInfo}'>
+                        <img src="../../../assets/img/dropUp.png" alt="" class="arrow-up">
+                          <div class="UserInfo__content">
+                              <div class="inFo">
+                                  <p (click)='thongTinUser()' routerLink='/thongTin'>Thông Tin Người Dùng</p>
+                              </div>
+                              <div class="logOut">
+                                  <p (click)="lognOutUser()">Đăng Xuất</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <span class="UserName px-2">{{currentUser.taiKhoan}}</span>
+              </div>
+          </ng-template>
+
+    </div>
+</nav>

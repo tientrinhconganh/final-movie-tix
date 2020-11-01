@@ -1,0 +1,11 @@
+<div class="movie-info__list">
+    
+    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+        <!-- <button class="slick-prev slick-arrow" aria-label="Previous" type="button" >Previous</button> -->
+        <div ngxSlickItem *ngFor="let phimItem of danhSachPhim" class="slide">
+            <app-item-phim (transTrailer)="getTrailer($event)" [Phim]="phimItem" ></app-item-phim>
+        </div>
+        <!-- <button class="slick-next slick-arrow" aria-label="Next" type="button" >Next</button> -->
+    </ngx-slick-carousel>
+    
+</div>
